@@ -213,7 +213,10 @@ function handleGameOver(score, total_distance) {
   });
 
   let target = document.querySelector(".target");
-  resetTarget(target);
+  target.style.transform = "scale(0)";
+  setTimeout(() => {
+    resetTarget(target);
+  }, 1000);
 
   let string = `You travelled ${Math.round(total_distance)}px and zapped ${score} ${score > 1 ? "mosquitoes" : "mosquito"}! `;
 
